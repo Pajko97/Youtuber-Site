@@ -1,9 +1,15 @@
 import React from 'react';
+import './App.css';
 
 const Pocetna = () => {
     return (
-      <div className="nav-section">
-        <h1>Pocetna</h1>
+      <div className="pocetna">
+        <h1>Ksoma Gaming</h1>
+        <div className="social-media">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
       </div>
     );
   };

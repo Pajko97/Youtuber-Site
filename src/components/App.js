@@ -6,12 +6,13 @@ import Turniri from './Turniri';
 import Uskoro from './Uskoro';
 import Pocetna from './Pocetna';
 import Greska from './Greska';
+import CSS from './App.css';
 
 class App extends Component {
     render() {
      return(
        <BrowserRouter>
-            <div className="aaaz">
+            <div className="app">
         
              <Navbar />
                 <Switch>
