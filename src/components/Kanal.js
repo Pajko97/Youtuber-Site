@@ -13,6 +13,7 @@ class Kanal extends Component {
       subs: undefined,
       klipovi: undefined,
       pregledi: undefined,
+      plejlista: []
     };
   }
 
@@ -25,11 +26,16 @@ class Kanal extends Component {
 
     }))
 
-    axios.get("https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCd4dAk4EfnzS88SIDBrJzhA&key=AIzaSyDnyonG2rcsOLzKOw7BzQLv8Aao3VPiHvo")
-    .then((result) => console.log(result))
+    axios.get("https://www.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UCd4dAk4EfnzS88SIDBrJzhA&maxResults=30&key=AIzaSyDnyonG2rcsOLzKOw7BzQLv8Aao3VPiHvo")
+    .then((result) => this.setState({
+        plejlista: result.data.items
+    }));
   };
   
   render() {
+
+    let lista = this.state.plejlista;
+
     return (
       <div className="kanal">
         <div className="klipovi">
@@ -39,45 +45,27 @@ class Kanal extends Component {
            <p>05.06.2018</p>
 =          </div>
           <div className="ostali">
-            <div className="klip-box">
-              <h4>Ime klipa</h4>
-              <img src="http://via.placeholder.com/150x90"/>
-              <p>05.06.2018</p>
+          <div className="klip-box info">
+              <h1>Plejliste</h1>
             </div>
+          <div className="plejliste">
+          
+            {
+              lista.map( (list) => 
+                <div className="lista">
+                  <h4>{list.snippet.title}</h4>
+                  <img src={list.snippet.thumbnails.medium.url} />
+                  <p className="broj">{list.contentDetails.itemCount}</p>
+                </div>
+              
+              )}
+          </div>
 
-                  <div className="klip-box">
-              <h4>Ime klipa</h4>
-              <img src="http://via.placeholder.com/150x90"/>
-              <p>05.06.2018</p>
-            </div>
-
-                  <div className="klip-box">
-              <h4>Ime klipa</h4>
-              <img src="http://via.placeholder.com/150x90"/>
-              <p>05.06.2018</p>
-            </div>
-
-                  <div className="klip-box">
-              <h4>Ime klipa</h4>
-              <img src="http://via.placeholder.com/150x90"/>
-              <p>05.06.2018</p>
-            </div>
-
-                  <div className="klip-box">
-              <h4>Ime klipa</h4>
-              <img src="http://via.placeholder.com/150x90"/>
-              <p>05.06.2018</p>
-            </div>
-
-                  <div className="klip-box">
-              <h4>Ime klipa</h4>
-              <img src="http://via.placeholder.com/150x90"/>
-              <p>05.06.2018</p>
-              </div>
+        
               <div className="klip-box info">
-              <p>Pregleda <br/>{this.state.pregledi}</p>
-              <p>Subskrajbera <br/>{this.state.subs}</p>
-              <p>Klipova <br/>{this.state.klipovi}</p>
+              <p className="pregledi">Pregleda <br/>{this.state.pregledi}</p>
+              <p className="subs">Subskrajbera <br/>{this.state.subs}</p>
+              <p className="klip">Klipova <br/>{this.state.klipovi}</p>
             </div>
           </div>
         </div>
