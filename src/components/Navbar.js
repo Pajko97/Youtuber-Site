@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import './App.css';
-import axios from 'axios';
 
 
 
 class Navbar extends Component {
- 
+
   render() {
     return (
       <div className="Navbar">

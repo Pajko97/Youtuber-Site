@@ -23,7 +23,7 @@ html, body {
     padding:20px;
     color:var(--color3);
     margin-top:0;
-    height:10vh;
+    height:8vh;
     align-items: center;
     justify-content: center;
     background-color:var(--color2);
@@ -61,7 +61,7 @@ html, body {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    height:82vh;
+    height:86.5vh;
     align-items:center;
     font-family: 'Roboto THIN', sans-serif;
 }
@@ -99,14 +99,14 @@ html, body {
 .kanal {
     background-color:var(--color1);
     align-items:flex-start;
-    color: aquamarine;
+    color: gainsboro;
     
 }
 .klipovi {
     display:flex;
     flex-direction:row;
     align-items:center;
-    width:60%;
+    width:100%;
 }
 .poslednji {
     display:flex;
@@ -118,16 +118,27 @@ html, body {
 .ostali {
     display:flex;
     margin:2%;
-    
+    flex-wrap : wrap;
+    height:500px;
+    width:60%;
     
 }
 .ostali .klip-box {
-    flex-wrap:wrap;
+    margin:1%;
 }
 .poslednji p {
     align-self: flex-end;
 }
 
+.info {
+    display:flex;
+    flex-direction:row;
+    margin:2%;
+}
+
+.info p {
+    padding:2%
+}
 
 /* Turniri */
 .turniri {
@@ -155,6 +166,39 @@ html, body {
     transition: 0.4s ease-in;
 }
 
+/* Uskoro */
+
+.uskoro {
+    color: gainsboro;
+    background-color:var(--color1);
+    display:flex;
+    flex-direction: row;
+    
+}
+.vest{
+    width:30%;
+    padding:2%;
+    margin:2%;
+    display:flex;
+    background-color:var(--color5);
+    border-radius:20px;
+    flex-direction:column;
+}
+
+.vest h2 {
+    text-align:center;
+
+}
+
+.vest p {
+    color:var(--color1) !important;
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+.vest #datum {
+    align-self:flex-end;
+}
 @keyframes opacitEj {
     from{opacity:0;}
     to{opacity:1;}
