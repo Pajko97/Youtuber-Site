@@ -23,6 +23,7 @@ html, body {
     padding:20px;
     color:var(--color3);
     margin-top:0;
+    height:10vh;
     align-items: center;
     justify-content: center;
     background-color:var(--color2);
@@ -60,6 +61,7 @@ html, body {
     display:flex;
     flex-direction: column;
     justify-content: center;
+    height:82vh;
     align-items:center;
     font-family: 'Roboto THIN', sans-serif;
 }

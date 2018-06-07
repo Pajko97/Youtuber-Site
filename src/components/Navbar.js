@@ -1,9 +1,13 @@
-import { NavLink } from 'react-router-dom';
-import React from 'react';
+import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 import './App.css';
+import axios from 'axios';
 
 
-const Navbar = () => {
+
+class Navbar extends Component {
+ 
+  render() {
     return (
       <div className="Navbar">
         <NavLink className="navlink" id="Pocetna" to="/" >Pocetnaa</NavLink>
@@ -11,8 +15,8 @@ const Navbar = () => {
         <NavLink className="navlink" id="Turniri" to="/turniri" >Turniri</NavLink>
         <NavLink className="navlink" id="Uskoro" to="/uskoro" >Uskoro</NavLink>
       </div>
-    );
-  };
+    )
+  }
+}
 
 export default Navbar;
-
