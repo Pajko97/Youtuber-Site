@@ -55,8 +55,8 @@ class Kanal extends Component {
                 <div className="lista">
                   <h4>{list.snippet.title}</h4>
                   <img src={list.snippet.thumbnails.medium.url} />
-                  <p className="broj">{list.contentDetails.itemCount}</p>
-                </div>
+{/*                   <p className="broj">{list.contentDetails.itemCount}</p>
+ */}                </div>
               
               )}
           </div>
