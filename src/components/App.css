@@ -120,6 +120,7 @@ html {
     display:flex;
     flex-direction:row;
     overflow:scroll;
+    border:1px solid white;
 }
 
 .broj {

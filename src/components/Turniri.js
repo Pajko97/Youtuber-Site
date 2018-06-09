@@ -9,14 +9,14 @@ class Turniri extends Component {
     var x = setInterval(function() {
 
     var now = new Date().getTime();
-
+    var timer = document.getElementsByClassName('timer');
     var distance = countDownDate - now;
     
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    console.log("Time" + days + hours + minutes + seconds)
+    timer.innerHtml = days+hours+minutes+seconds;
      }) 
     }
   render() {
@@ -25,10 +25,10 @@ class Turniri extends Component {
             <h1>Trenutno ni jedan turnir nije u toku!</h1>
             <h2>Sledeci turnir za :</h2>
             <div className="timer">
-            <p>{this.days}</p>
-            <p>{this.hours}</p>
-            <p>{this.minutes}</p>
-            <p>{this.seconds}</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
             </div>
             <a className="prijavi-se">Prijavi se</a>
         </div>
