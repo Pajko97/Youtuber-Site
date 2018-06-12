@@ -11,7 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "file-loader": "^1.1.11",
+    "moment": "^2.22.2",
     "react": "^16.2.0",
+    "react-awesome-countdowntimer": "^1.1.1",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
     "react-player": "^1.6.2",

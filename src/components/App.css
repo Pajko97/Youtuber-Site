@@ -201,6 +201,7 @@ html {
 }
 .timer {
     border: 2px solid white;
+    padding:3%;
     border-radius:20px;
     color:white;
     width:60%;
