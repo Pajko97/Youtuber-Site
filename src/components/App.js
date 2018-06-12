@@ -1,31 +1,40 @@
-import React, {Component} from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Navbar from './Navbar.js';
-import Kanal from './Kanal';
-import Turniri from './Turniri';
-import Uskoro from './Uskoro';
-import Pocetna from './Pocetna';
-import Greska from './Greska';
-import CSS from './App.css';
+import React, { Component } from 'react';
+import Layout from './Layout';
+import Login from './Login';
+import fire from '../config/fire';
 
 class App extends Component {
-    render() {
-     return(
-       <BrowserRouter>
-            <div className="app">
-        
-             <Navbar />
-                <Switch>
-                    <Route path="/" component={Pocetna} exact />
-                    <Route path="/kanal" component={Kanal} />
-                    <Route path="/turniri" component={Turniri} />
-                    <Route path="/uskoro" component={Uskoro} />
-                    <Route component={Greska} />
-                </Switch>
-            </div>
-            </BrowserRouter>
-     );
+  constructor(props) {
+    super(props);
+    this.state = {
+        user : {}
     }
-};
+}
+
+componentDidMount() {
+    this.authListener();
+}
+
+authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+        console.log(user);
+        if(user) {
+            this.setState({ user });
+/*                 localStorage.setItem('user', user.uid);
+*/            } else {
+            this.setState({ user: null });
+/*                 localStorage.removeItem('user');
+*/            }
+    });
+}
+  render() {
+    return (
+      <div className="app">
+        {this.state.user ? (<Layout/>) : (<Login/>) }
+
+      </div>
+    )
+  }
+}
 
 export default App;

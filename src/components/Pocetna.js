@@ -16,8 +16,8 @@ const Pocetna = () => {
 
         </div>
         <div className="fullscreen-bg">
-          <ReactPlayer className="fullscreen-bg__video" playing="true" muted="true" url="https://www.youtube.com/watch?v=bTSKyGUXy5o"/>
-      </div>
+{/*           <ReactPlayer className="fullscreen-bg__video" playing="true" muted="true" url="https://www.youtube.com/watch?v=bTSKyGUXy5o"/>
+ */}      </div>
       </div>
     );
   };
