@@ -53,12 +53,13 @@ class Login extends Component {
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value});
     }
+
   render() {
     return (
       <div className="login">
         <form className="forma">
             <input value={this.state.username} onChange={this.handleChange} type="text" name="username"
-            placeholder="Unesi korisnicko ime" />
+            placeholder="Unesi korisnicko ime " />
 
             <input value={this.state.email} onChange={this.handleChange} type="email" name="email"
             placeholder="Enter email"/>
