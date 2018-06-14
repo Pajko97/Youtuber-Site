@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import fire from '../config/fire'
+const db = fire.database();
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.login = this.login.bind(this);
         this.signup = this.signup.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+/*         this.writeUserData = this.writeUserData.bind(this);
+ */        this.handleChange = this.handleChange.bind(this);
         this.state= {
+            username: '',
             email: '',
             password: '',
+            summName: '',
+            userId: ''
         }
 
     }
+
+
     login(e) {
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {})
@@ -25,11 +32,23 @@ class Login extends Component {
         e.preventDefault();
         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((u) => {})
-        .then((u) => {console.log(u)})
+        .then((u) => {})
         .catch((error) => {
             console.log(error);
         });
-    }
+
+        fire.auth().onAuthStateChanged((user) => {
+            if (user) {
+                let uId = user.uid;
+                db.ref('users/' + uId).child('Info').set({
+                    summName: this.state.summName,
+                    email: this.state.email,
+                  });
+            }
+          });
+
+/*         this.writeUserData();
+ */    }
 
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value});
@@ -38,17 +57,20 @@ class Login extends Component {
     return (
       <div className="login">
         <form className="forma">
+            <input value={this.state.username} onChange={this.handleChange} type="text" name="username"
+            placeholder="Unesi korisnicko ime" />
+
             <input value={this.state.email} onChange={this.handleChange} type="email" name="email"
             placeholder="Enter email"/>
 
             <input value={this.state.password} onChange={this.handleChange} type="password" name="password" 
             placeholder="Enter password" />
 
-            <input value={this.state.summName} onChange={this.handleChange} type="summname" name="summaname"
-            placeholder="Enter Summoner name"/>
+            <input onChange={this.handleChange} value={this.state.summName} type="email" name="summName"
+            placeholder="Enter Summoner name" />
             <div className="server">
                 <div className="select">
-                    <input type="checkbox" id="checkBox-W"/>
+                    <input type="checkbox"  id="checkBox-W"/>
                     <label htmlFor="checkBox-W">EUW</label>
                 </div>
                 <div className="select">
