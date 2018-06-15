@@ -35,7 +35,17 @@ html {
     background-color:var(--color2);
     font-family: 'Painted', sans-serif;
 }
-
+.logout-div {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    color:white;
+    right:2%;
+}
+.logout {
+    border-radius:50%;
+    
+}
 .navlink {
     padding:10px 30px;
     color:white;

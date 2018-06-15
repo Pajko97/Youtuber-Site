@@ -7,8 +7,7 @@ class Login extends Component {
         super(props);
         this.login = this.login.bind(this);
         this.signup = this.signup.bind(this);
-/*         this.writeUserData = this.writeUserData.bind(this);
- */        this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.state= {
             username: '',
             email: '',
@@ -28,7 +27,7 @@ class Login extends Component {
         });
     }
 
-    signup(e){
+    signup(e) {
         e.preventDefault();
         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((u) => {})
@@ -40,15 +39,14 @@ class Login extends Component {
         fire.auth().onAuthStateChanged((user) => {
             if (user) {
                 let uId = user.uid;
-                db.ref('users/' + uId).child('Info').set({
+                db.ref('users/' + this.state.username).set({
                     summName: this.state.summName,
                     email: this.state.email,
                   });
             }
           });
 
-/*         this.writeUserData();
- */    }
+    }
 
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value});

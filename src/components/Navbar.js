@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import './App.css';
+import LogoutIcon from 'react-icons/lib/fa/sign-out';
 import fire from '../config/fire';
 
 
@@ -20,7 +21,10 @@ class Navbar extends Component {
         <NavLink className="navlink" id="Kanal" to="/kanal" >Kanal</NavLink>
         <NavLink className="navlink" id="Turniri" to="/turniri" >Turniri</NavLink>
         <NavLink className="navlink" id="Uskoro" to="/uskoro" >Uskoro</NavLink>
-        <button onClick={this.logout}>Odjavi se</button>
+        <div className="logout-div">
+          <LogoutIcon name="logout" width={32} height={32} onClick={this.logout}/>
+          <label for="logout">Odjavi se</label>
+        </div>
       </div>
     )
   }
