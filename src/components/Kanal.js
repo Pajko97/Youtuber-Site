@@ -1,6 +1,7 @@
 import React ,{Component} from 'react'
 import './App.css'
 import axios from 'axios'
+import ReactPlayer from 'react-player'
 
 
 
@@ -13,7 +14,11 @@ class Kanal extends Component {
       subs: undefined,
       klipovi: undefined,
       pregledi: undefined,
-      plejlista: []
+      plejlista: [],
+      video_ime : '',
+      video_pregledi : '',
+      video_link : '',
+      id : ''
     };
   }
 
@@ -30,6 +35,14 @@ class Kanal extends Component {
     .then((result) => this.setState({
         plejlista: result.data.items
     }));
+
+    axios.get("https://www.googleapis.com/youtube/v3/videos?part=contentDetails%2Csnippet%2Cstatistics&id=bTSKyGUXy5o&key=AIzaSyDnyonG2rcsOLzKOw7BzQLv8Aao3VPiHvo")
+    .then((result) => this.setState({
+      video_ime: result.data.items[0].snippet.localized.title,
+      video_pregledi: result.data.items[0].statistics.viewCount,
+      id: result.data.items[0].contentDetails.id
+    }))
+    .catch((error) => console.log(error))
   };
   
   render() {
@@ -40,10 +53,10 @@ class Kanal extends Component {
       <div className="kanal">
         <div className="klipovi">
           <div className="poslednji">
-          <h2>Ime klipa</h2>
-           <img src="http://via.placeholder.com/300x200" />
-           <p>05.06.2018</p>
-=          </div>
+          <h2>{this.state.video_ime}</h2>
+          <ReactPlayer className="fullscreen-bg__video" playing="true"  url="https://www.youtube.com/watch?v=bTSKyGUXy5o"/>
+           <p className="pregledi_najgledaniji">Pregleda <br/>{this.state.video_pregledi}</p>
+          </div>
           <div className="ostali">
           <div className="klip-box info">
               <h1>Plejliste</h1>

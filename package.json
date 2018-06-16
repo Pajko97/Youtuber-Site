@@ -17,6 +17,7 @@
     "react-awesome-countdowntimer": "^1.1.1",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
+    "react-livechat": "^1.0.25",
     "react-player": "^1.6.2",
     "react-router": "^4.3.0-rc.3",
     "react-router-dom": "^4.3.0-rc.3",
