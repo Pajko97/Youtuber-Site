@@ -6,9 +6,6 @@ import Turniri from './Turniri';
 import Uskoro from './Uskoro';
 import Pocetna from './Pocetna';
 import Greska from './Greska';
-import CSS from './App.css';
-import fire from '../config/fire'
-import Login from './Login';
 
 class Layout extends Component {
     
