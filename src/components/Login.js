@@ -16,12 +16,14 @@ class Login extends Component {
             userId: ''
         }
 
+
     }
 
 
     login(e) {
         e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {})
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then((u) => {})
         .catch((error) => {
             console.log(error);
         });
