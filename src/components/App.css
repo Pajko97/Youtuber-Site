@@ -16,7 +16,40 @@ html {
     --color4: #595250;
     --color5: #6a615d;
 }
+@media (max-width:600px) {
+    .Navbar {
+        font-size:1rem !important;
+    }
+    .logout-div {
+        font-size: 0.5rem !important; 
+    }
+    .fullscreen-bg__video {
+        width:300px !important;
+        height:200px;
+    }
+    .kanal {
+        flex-direction:column!important;
+    }
+    .klipovi {
+        flex-direction: column!important;
+    }
+    .plejliste {
+        flex-direction: column!important;
+    }
+    .lista {
+        flex-direction:column !important;
+        color: black;
+    }
+    .Navbar {
+        padding: 0 !important;
+    }
+    .navlink {
+        margin:0 !important;
+        padding:0 5px !important;
+    }
 
+  
+}
 .app {
     margin:0;
     padding:0;
@@ -26,14 +59,14 @@ html {
 .Navbar {
     display:flex;
     flex-direction:row;
-    padding:20px;
+    padding:0px 20px;
     color:var(--color3);
     margin-top:0;
     height:8vh;
     align-items: center;
     justify-content: center;
     background-color:var(--color2);
-    font-family: 'Painted', sans-serif;
+    font-family:'Roboto', sans-serif;
 }
 .logout-div {
     display:flex;
@@ -47,10 +80,16 @@ html {
     
 }
 .navlink {
-    padding:10px 30px;
+    padding:0px 30px;
     color:white;
     text-decoration: none;
+
 }
+.navlink:hover {
+    transition: color 0.3s linear;
+    border-bottom:1px solid white;
+}
+
 /* Pocetna */
 
 .fullscreen-bg {
@@ -77,10 +116,13 @@ html {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    height:86.5vh;
+    height:92vh;
     align-items:center;
     margin:0 auto;
     font-family: 'Roboto THIN', sans-serif;
+}
+.turniri {
+    height:92vh !important;
 }
 
 .yt-icon {
@@ -92,21 +134,23 @@ html {
     transition: color 1s ease;
 }
 .insta-icon {
-    color:gainsboro;
+    color:rgb(74, 8, 77);
     padding:20px;
 }
 .pocetna h1 {
-    font-size:10rem;
+    font-size:32px;
     color:orange;
     border-bottom:2px solid white;
     font-family: 'Roboto Thin', sans-serif;
     font-style: italic;
+    max-height:300px;
 }
 
 .social-media {
     display:flex;
     flex-direction:row;
     padding:20px;
+    margin-bottom:10%;
 }
 
 .social-media img {
@@ -280,7 +324,12 @@ html {
 }
 
 /* Login */
-
+.login {
+    font-family: 'roboto', sans-serif;
+}
+.welcome {
+    color: gainsboro;
+}
 .login .forma {
     display:flex;
     flex-direction:column;
@@ -288,6 +337,7 @@ html {
     justify-content: center;
     margin-top:10% !important;
     width:50%;
+    border-radius:10%;
     margin:auto 25%;
     background-color:var(--color2)
 }

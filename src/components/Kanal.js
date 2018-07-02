@@ -53,9 +53,9 @@ class Kanal extends Component {
       <div className="kanal">
         <div className="klipovi">
           <div className="poslednji">
-          <h2>{this.state.video_ime}</h2>
-          <ReactPlayer className="fullscreen-bg__video" playing="true"  url="https://www.youtube.com/watch?v=bTSKyGUXy5o"/>
-           <p className="pregledi_najgledaniji">Pregleda <br/>{this.state.video_pregledi}</p>
+            <h2>{this.state.video_ime}</h2>
+            <ReactPlayer className="fullscreen-bg__video" playing="true"  url="https://www.youtube.com/watch?v=bTSKyGUXy5o"/>
+            <p className="pregledi_najgledaniji">Pregleda <br/>{this.state.video_pregledi}</p>
           </div>
           <div className="ostali">
           <div className="klip-box info">

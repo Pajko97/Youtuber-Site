@@ -57,6 +57,7 @@ class Login extends Component {
     return (
       <div className="login">
         <form className="forma">
+        <h1 className="welcome">Dobrodosli!</h1>
             <input value={this.state.username} onChange={this.handleChange} type="text" name="username"
             placeholder="Unesi korisnicko ime " />
 
