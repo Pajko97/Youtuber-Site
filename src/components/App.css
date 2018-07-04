@@ -29,6 +29,7 @@ html {
     }
     .kanal {
         flex-direction:column!important;
+        height:auto !important;
     }
     .klipovi {
         flex-direction: column!important;
@@ -45,10 +46,33 @@ html {
     }
     .navlink {
         margin:0 !important;
-        padding:0 0.6% !important;
+        padding:0 1% !important;
     }
+    /* Pocetna */
 
-  
+    .pocetna h1 {
+        font-size:5rem !important;
+    }
+    /* Turniri */
+    .tajmer {
+        width: 60% !important;
+        size: contain;
+    }
+    .time {
+      font-size:1rem !important;  
+      margin:10px;
+    }
+    .section {
+        min-width:0 !important;
+        width:20%;
+        margin: auto 2%;
+    }
+    .label {
+        font-size:1rem !important;
+    }
+    .turniri h1 {
+        text-align: center;
+    }
 }
 .app {
     margin:0;
@@ -75,10 +99,12 @@ html {
     color:gainsboro;
     
 }
+
 .logout {
     border-radius:50%;
     
 }
+
 .navlink {
     padding:0px 30px;
     color:white;
@@ -214,7 +240,7 @@ html {
     display:flex;
     margin:2%;
     flex-wrap : wrap;
-    height:500px;
+    height:auto;
     width:60%;
     
 }
