@@ -65,7 +65,7 @@ html {
     .section {
         min-width:0 !important;
         width:20%;
-        margin: auto 2%;
+        margin: auto 1%;
     }
     .label {
         font-size:1rem !important;
