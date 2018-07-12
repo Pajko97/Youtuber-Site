@@ -1,14 +1,18 @@
 {
   "name": "react_webpack_starter",
   "version": "1.0.0",
-  "description": "Boilerplate for React apps",
+  "description": "Ksoma Gaming",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
-  "author": "Brad Traversy",
-  "license": "MIT",
+  "author": "Pavle Janjusevic",
+  "engines" : {
+    "node" : "8.10.0",
+    "npm" : "6.10.0"
+  },
+
   "dependencies": {
     "file-loader": "^1.1.11",
     "firebase": "^5.0.4",
