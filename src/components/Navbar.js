@@ -4,8 +4,8 @@ import './App.css';
 import LogoutIcon from 'react-icons/lib/fa/sign-out';
 import fire from '../config/fire';
 import ReactFontFace from 'react-font-face';
-import Granger from '../includes/fonts/Granger-Regular.ttf';
-
+/* import Granger from '../includes/fonts/Granger-Regular.ttf';
+ */
 const styles = {
   header : {
     fontFamily: 'Granger',

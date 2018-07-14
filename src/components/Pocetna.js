@@ -4,8 +4,8 @@ import Youtube from 'react-icons/lib/fa/youtube-play';
 import Instagram from 'react-icons/lib/fa/instagram';
 import './App.css';
 import ReactFontFace from 'react-font-face';
-import Granger from '../includes/fonts/Granger-Regular.ttf';
-
+/* import Granger from '../includes/fonts/Granger-Regular.ttf';
+ */
 const styles = {
   header : {
     fontFamily: 'Granger',
