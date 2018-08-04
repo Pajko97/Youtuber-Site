@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Ksoma Gaming",
   "main": "index.js",
-  "scripts": {
+ /*  "scripts": {
     "start": "webpack-dev-server --mode production",
     "build": "webpack --mode production"
-  },
+  }, */
   "author": "Pavle Janjusevic",
   "engines" : {
     "node" : "8.10.0",
