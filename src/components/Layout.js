@@ -19,7 +19,6 @@ class Layout extends Component {
                     <Route path="/kanal" component={Kanal} />
                     <Route path="/turniri" component={Turniri} />
                     <Route path="/uskoro" component={Uskoro} />
-                    <Route component={Greska} />
                 </Switch>
             </div>
             </BrowserRouter>

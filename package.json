@@ -4,14 +4,25 @@
   "description": "Ksoma Gaming",
   "main": "index.js",
   "author": "Pavle Janjusevic",
-  "engines" : {
-    "node" : "8.10.0",
-    "npm" : "6.1.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
-
+  "engines": {
+    "node": "8.10.0",
+    "npm": "6.1.0"
+  },
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "firebase": "^5.0.4",
+    "font-loader": "^0.1.2",
+    "html-webpack-plugin": "^3.1.0",
     "moment": "^2.22.2",
     "react": "^16.2.0",
     "react-awesome-countdowntimer": "^1.1.1",
@@ -22,19 +33,12 @@
     "react-player": "^1.6.2",
     "react-router": "^4.3.0-rc.3",
     "react-router-dom": "^4.3.0-rc.3",
+    "react-scripts": "^1.1.4",
     "react-svg-loader": "^2.1.0",
-    "webpack-dev-server": "^3.1.1",
-    "webpack-cli": "^2.0.13",
-    "html-webpack-plugin": "^3.1.0",
+    "style-loader": "^0.20.3",
     "webpack": "^4.4.0",
-    "axios": "^0.18.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "font-loader": "^0.1.2",
-    "style-loader": "^0.20.3"
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
   },
   "devDependencies": {
     "axios": "^0.18.0",
