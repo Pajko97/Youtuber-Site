@@ -4,7 +4,7 @@
   "description": "Ksoma Gaming",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode production",
     "build": "webpack --mode production"
   },
   "author": "Pavle Janjusevic",
