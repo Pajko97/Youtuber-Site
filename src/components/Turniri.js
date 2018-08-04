@@ -9,7 +9,7 @@ class Turniri extends Component {
   render() {
     return(
         <div className="turniri">
-            <h1>Trenutno ni jedan turnir nije u toku!</h1>
+            <h1>Trenutno ni jedan turnir nije u toku</h1>
             <h2>Sledeci turnir za :</h2>
             <div className="timer">
         <CountdownTimer className="tajmer" endDate={moment('09/12/2018')} />
