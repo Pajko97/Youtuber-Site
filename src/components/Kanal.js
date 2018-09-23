@@ -2,6 +2,10 @@ import React ,{Component} from 'react'
 import './App.css'
 import axios from 'axios'
 import ReactPlayer from 'react-player'
+import logogif from './ksomasub.gif';
+import logostill from './ksomalogo.png';
+import GifPlayer from 'react-gif-player';
+
 
 
 
@@ -18,9 +22,11 @@ class Kanal extends Component {
       video_ime : '',
       video_pregledi : '',
       video_link : '',
-      id : ''
+      id : '',
+      playing : true
     };
   }
+  
 
   componentDidMount() {
     axios.get("https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UCd4dAk4EfnzS88SIDBrJzhA&key=AIzaSyDnyonG2rcsOLzKOw7BzQLv8Aao3VPiHvo")
@@ -53,9 +59,10 @@ class Kanal extends Component {
       <div className="kanal">
         <div className="klipovi">
           <div className="poslednji">
-            <h2>{this.state.video_ime}</h2>
+          <GifPlayer gif={logogif} still={logostill} autoplay={true} height="256" width="256" />
+          {/*   <h2>{this.state.video_ime}</h2>
             <ReactPlayer className="fullscreen-bg__video" playing="true"  url="https://www.youtube.com/watch?v=bTSKyGUXy5o"/>
-            <p className="pregledi_najgledaniji">Pregleda <br/>{this.state.video_pregledi}</p>
+            <p className="pregledi_najgledaniji">Pregleda <br/>{this.state.video_pregledi}</p> */}
           </div>
           <div className="ostali">
           <div className="klip-box info">

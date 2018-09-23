@@ -13,7 +13,8 @@ class Login extends Component {
             email: '',
             password: '',
             summName: '',
-            userId: ''
+            userId: '',
+            server: '',
         }
 
 
@@ -41,9 +42,11 @@ class Login extends Component {
         fire.auth().onAuthStateChanged((user) => {
             if (user) {
                 let uId = user.uid;
+                let res = this.menu.value;
                 db.ref('users/' + this.state.username).set({
                     summName: this.state.summName,
                     email: this.state.email,
+                    server: res
                   });
             }
           });
@@ -69,16 +72,12 @@ class Login extends Component {
 
             <input onChange={this.handleChange} value={this.state.summName} type="email" name="summName"
             placeholder="Enter Summoner name" />
-            <div className="server">
-                <div className="select">
-                    <input type="checkbox"  id="checkBox-W"/>
-                    <label htmlFor="checkBox-W">EUW</label>
-                </div>
-                <div className="select">
-                    <input type="checkbox" id="checkBox-E"/>
-                    <label htmlor="checkBox-E">EUNE</label>
-                </div>
-            </div>
+            <select id = "dropdown" ref = {(input)=> this.menu = input}>
+                <option value="N/A">Choose Server</option>
+                <option value="EUW">EUW</option>
+                <option value="EUNE">EUNE</option>
+            </select>
+            
             <div className="submit">
                 <button type="submit" onClick={this.login}>Uloguj se</button>
                 <button onClick={this.signup} style={{marginLeft: '25px'}}>Registruj se</button>

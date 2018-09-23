@@ -155,6 +155,23 @@ html {
     color:red;
     padding:20px;
 }
+.twitch {
+    border:2px solid white;
+    z-index: 10;
+    position: fixed;
+    width:200px;
+    height:2%;
+    top: 0%;
+    left: 0%;
+    margin-top:23%;
+    margin-left:80%;
+}
+
+.banner {
+    height: 100%;
+    width:100%;
+    size: contain;
+}
 .yt-icon:hover {
     color:white;
     transition: color 1s ease;
@@ -162,6 +179,11 @@ html {
 .insta-icon {
     color:rgb(74, 8, 77);
     padding:20px;
+}
+.pocetna {
+    background-image: url('./ksomabanner.jpg');
+    background-size: cover;
+    background-position: center;
 }
 .pocetna h1 {
     font-size:32px;
@@ -175,13 +197,16 @@ html {
 .social-media {
     display:flex;
     flex-direction:row;
-    padding:20px;
-    margin-bottom:10%;
+    margin-top:35%;
+}
+.padding {
+    margin:auto 50px;
+    color: gainsboro;
 }
 
 .social-media img {
     background-color:white;
-}
+ }
 /* Kanal */
 
 .kanal {
